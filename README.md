@@ -1,6 +1,6 @@
-# Mechref
+# Reference Pages
 
-Currently, the website is hosted at <a href="https://mechref.org">https://mechref.org</a>. 
+Currently, the website is hosted at <a href="https://mechref.org">https://mechref.org</a>, which is subject to change. 
 
 Index:
 <ul>
