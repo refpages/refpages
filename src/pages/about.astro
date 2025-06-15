@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Section from "../components/Section.astro"
+import SubSection from "../components/SubSection.astro"
+---
+
+<Layout title="About">
+<Section title="About">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="/about/students"  class="text-body">For students</a></li>
+        <li class="list-group-item"><a href="/about/instructors" class="text-body">For instructors</a></li>
+        <li class="list-group-item">
+            Setup your own version of RefPages...
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item"><a href="/about/instructions/mechse" class="text-body">...as a MechSE course</a></li>
+                <li class="list-group-item"><a href="/about/instructions/illinois" class="text-body">... as a non-MechSE Illinois department</a></li>
+                <li class="list-group-item pb-0"><a href="/about/instructions/external" class="text-body">... as another college</a></li>
+            </ul>
+        </li>
+        <li class="list-group-item"><a href="/about/team" class="text-body">The project and our team</a></li>
+    </ul>
+</Section>
+<SubSection title="Start building your course">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            Skeleton pages
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item"><a href="/about/examples/home_page" class="text-body">Starter home page</a></li>
+                <li class="list-group-item"><a href="/about/examples/example" class="text-body">Starter page</a></li>
+            </ul>
+        </li>
+        <li class="list-group-item"><a href="/about/docs" class="text-body">Style guide & documentation</a></li>
+        <li class="list-group-item"><a href="/about/troubleshooting" class="text-body">Troubleshooting & Common problems</a></li>
+    </ul>
+</SubSection>
+</Layout>

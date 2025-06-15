@@ -1,11 +1,194 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/BlankBlankLayout.astro';
+import Section from '../components/Section.astro';
+import SubSection from '../components/SubSection.astro';
+import Searchbar from '../components/Searchbar.astro';
+import CalloutContainer from '../components/CalloutContainer.astro';
+import CalloutCard from '../components/CalloutCard.astro';
+import Image from '../components/Image.astro';
+import Row from '../components/Row.astro';
+import Col from '../components/Col.astro';
 ---
 
-<Layout>
-	<Welcome />
+<style>
+    :root{
+    --card-size: 180px;
+}
+
+#courses .title-section{
+    margin-top: 1rem;
+}
+
+#courses .title-section h3{
+    font-weight: bold;
+}
+
+ul a{
+    font-size: 1.2rem;
+    color: var(--bs-text-color);
+    transition: font-size linear .2s;
+}
+
+ul a:hover{
+    color: var(--altgeld-orange);
+}
+
+div.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--card-size));
+    grid-auto-rows: 1fr;
+    gap: 10px;
+    justify-content: center;
+}
+
+.main-cards{
+    padding: .5rem;
+    width: 100%;
+    background-color: #f0f0d0;
+    border: 2px solid var(--bs-border-color); 
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    transition: all linear .1s;
+}
+
+.main-cards a{
+    color: black;
+    text-decoration: none;
+}
+.main-cards p:first-of-type{
+    margin-top: .5rem;
+    margin-bottom: 0;
+
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-cards a div{
+    padding: .5rem; 
+    border-radius: .5rem;
+    height: calc(var(--card-size) - 1rem);
+}
+
+.main-cards:hover{
+    transform: scale(1.05);
+    margin-bottom: .5rem;
+}
+
+.main-cards img{
+    height: calc(var(--card-size) - 1rem);
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.simp-switch{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-left: 2rem;
+}
+
+.simp-btn{
+    margin-right: .5rem;
+}
+
+@media(width >= 768px){
+    ul a:hover{
+        transform: scale(1.05);
+        font-size: 1.17rem;
+    }
+
+    div.grid{
+        justify-content: start;
+    }
+}
+</style>
+
+<Layout title="Illinois Reference Pages">
+<div class="row mt-3">
+    <div class="col-12 col-md-7" id="courses">
+        <div id="Departments">
+            <div class="d-flex justify-content-between flex-row title-section mt-0">
+                <h3 class="flex-shrink-1">Engineering</h3>
+                <div class="form-check form-switch simp-switch ">
+                    <input class="form-check-input simp-btn" type="checkbox" role="switch" onchange="toggle_simplified_view(this);">
+                    <label class="form-check-label" style="text-wrap: nowrap;">Simplified view:</label>
+                </div>
+            </div>
+    
+            <div class="grid card-grid-fancy">
+                <div class="main-cards">
+                    <a href="/mechref">
+                        <img src="/home_page/mechref.png" style="background-color: white" />
+                        <p>Mechanical Engineering</p>
+                    </a>
+                </div>
+                <div class="main-cards">
+                    <a href="/materialsref">
+                        <img src="/home_page/materialsref.png" style="background-color: white"/>
+                        <p>Material Science & Engineering</p>
+                    </a>
+                </div>	
+                <div class="main-cards">
+                    <a href="/eceref">
+                        <img src="/home_page/eceref.png" style="background-color: white" />
+                        <p>Electrical & Computer Engineering</p>
+                    </a>
+                </div>
+                <div class="main-cards">
+                    <a href="/bioeref">
+                        <img src="/home_page/bioeref.png" style="background-color: white" />
+                        <p>Bioengineering</p>
+                    </a>
+                </div>
+                <div class="main-cards">
+                    <a href="/csref">
+                        <img src="/home_page/csref.png" style="background-color: white" />
+                        <p>Computer Science</p>
+                    </a>
+                </div>
+                 <div class="main-cards">
+                    <a href="/aeroref">
+                        <img src="/home_page/aeroref.png" style="background-color: white"/>
+                        <p>Aerospace Engineering</p>
+                    </a>
+                </div>	
+            </div>
+        
+            <ul class="mt-0 card-grid-simple">
+                <li><a href="/mechref">Mechanical Engineering</a></li>
+                <li><a href="/eceref">Electrical Engineering</a></li>
+                <li><a href="/bioref">Bioengineering</a></li>
+                <li><a href="/csref">Computer Science</a></li>
+                <li><a href="/aeroref">Aerospace Engineering</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-5 col-lg-5" id="info">
+        <p>Welcome to the reference pages for some of the courses taught at the University of Illinois at Urbana-Champaign.</p>
+
+        <p>You can navigate directly to a department listed above or learn more about the reference pages including information for students and instructors by clicking on the about page to the right of the top menu bar.</p>
+    </div>
+</div>
+
+<script is:inline>
+    function proper_ordering(){
+        if (window.innerWidth <= 768){
+            document.querySelector("#courses").classList.add('order-last')
+        }else{
+            document.querySelector("#courses").classList.remove('order-last')
+        }
+    }
+
+    proper_ordering()
+    
+    
+    $(window).on('resize', function(){
+        proper_ordering()
+    })
+</script>
+<script src="/static/js/simplified_view.js" is:inline></script>
 </Layout>
