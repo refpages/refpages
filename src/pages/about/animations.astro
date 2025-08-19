@@ -210,13 +210,13 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
     <CodeBox language="javascript" code=`
         vectors = new PrairieDraw("vectors", function() {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
-            var P = $V([2, 1]);
-            var V = $V([-1, -2]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;var P = $V([2, 1]);
+        &nbsp;&nbsp;&nbsp;var V = $V([-1, -2]);
         
-            this.line(O, P);
-            this.line(P, P.add(V));
+        &nbsp;&nbsp;&nbsp;this.line(O, P);
+        &nbsp;&nbsp;&nbsp;this.line(P, P.add(V));
         });
     ` />
 </SubSection>
@@ -249,13 +249,13 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
         circleArrow = new PrairieDraw("circleArrow", function() {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
         
-            this.arrow(O, this.vector2DAtAngle(0).x(2.7), "position");
-            this.arrow(O, this.vector2DAtAngle(3/4 * Math.PI).x(2.7));
-            this.circleArrow(O, 2, 0, 3/4 * Math.PI, "angMom");
-            this.circleArrow(O, 1, 0, 11/4 * Math.PI);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, this.vector2DAtAngle(0).x(2.7), "position");
+        &nbsp;&nbsp;&nbsp;this.arrow(O, this.vector2DAtAngle(3/4 * Math.PI).x(2.7));
+        &nbsp;&nbsp;&nbsp;this.circleArrow(O, 2, 0, 3/4 * Math.PI, "angMom");
+        &nbsp;&nbsp;&nbsp;this.circleArrow(O, 1, 0, 11/4 * Math.PI);
         });
 
         
@@ -285,12 +285,12 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
         points = new PrairieDraw("point", function () {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
     
-            for(let i=0; i<5; i++){
-                this.point(O.add($V([i-2, 2-i])));
-            }
+        &nbsp;&nbsp;&nbsp;for(let i=0; i<5; i++){
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.point(O.add($V([i-2, 2-i])));
+        &nbsp;&nbsp;&nbsp;}
 
         });
           ` />
@@ -325,12 +325,12 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
             Text = new PrairieDraw("text", function() {
-                this.setUnits(6, 6);
-                var O = $V([0, 0]);
-                var P = $V([2, 2]);
-                this.arrow(O, P);
-                this.text(O, $V([0, 1]), "TEX:O");
-                this.text(P, $V([0, -1]), "TEX:P", false, Math.PI/2, 30, 500);
+            &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+            &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
+            &nbsp;&nbsp;&nbsp;var P = $V([2, 2]);
+            &nbsp;&nbsp;&nbsp;this.arrow(O, P);
+            &nbsp;&nbsp;&nbsp;this.text(O, $V([0, 1]), "TEX:O");
+            &nbsp;&nbsp;&nbsp;this.text(P, $V([0, -1]), "TEX:P", false, Math.PI/2, 30, 500);
             });
             ` />
 
@@ -373,31 +373,33 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
             anchors = new PrairieDraw("anchors", function() {
-            this.setUnits(6, 6);
-            
-            var xnn = $V([-1, -1]);
-            var xn0 = $V([-1,  0]);
-            var xnp = $V([-1,  1]);
-            var x0n = $V([ 0, -1]);
-            var x0p = $V([ 0,  1]);
-            var xpn = $V([ 1, -1]);
-            var xp0 = $V([ 1,  0]);
-            var xpp = $V([ 1,  1]);
-            this.text(xnn, xpp, "TEX:(-1,-1)");
-            this.point(xn0);
-            this.text(xn0, xp0, "TEX:(-1, 0)");
-            this.point(xnp);
-            this.text(xnp, xpn, "TEX:(-1, 1)");
-            this.point(x0n);
-            this.text(x0n, x0p, "TEX:( 0,-1)");
-            this.point(x0p);
-            this.text(x0p, x0n, "TEX:( 0, 1)");
-            this.point(xpn);
-            this.text(xpn, xnp, "TEX:( 1,-1)");
-            this.point(xp0);
-            this.text(xp0, xn0, "TEX:( 1, 0)");
-            this.point(xpp);
-            this.text(xpp, xnn, "TEX:( 1, 1)");
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+
+        &nbsp;&nbsp;&nbsp;var xnn = $V([-1, -1]);
+        &nbsp;&nbsp;&nbsp;var xn0 = $V([-1, 0]);
+        &nbsp;&nbsp;&nbsp;var xnp = $V([-1, 1]);
+        &nbsp;&nbsp;&nbsp;var x0n = $V([0, -1]);
+        &nbsp;&nbsp;&nbsp;var x0p = $V([0, 1]);
+        &nbsp;&nbsp;&nbsp;var xpn = $V([1, -1]);
+        &nbsp;&nbsp;&nbsp;var xp0 = $V([1, 0]);
+        &nbsp;&nbsp;&nbsp;var xpp = $V([1, 1]);
+        
+        &nbsp;&nbsp;&nbsp;this.point(xnn);
+        &nbsp;&nbsp;&nbsp;this.text(xnn, xpp, "TEX:(-1,-1)");
+        &nbsp;&nbsp;&nbsp;this.point(xn0);
+        &nbsp;&nbsp;&nbsp;this.text(xn0, xp0, "TEX:(-1, 0)");
+        &nbsp;&nbsp;&nbsp;this.point(xnp);
+        &nbsp;&nbsp;&nbsp;this.text(xnp, xpn, "TEX:(-1, 1)");
+        &nbsp;&nbsp;&nbsp;this.point(x0n);
+        &nbsp;&nbsp;&nbsp;this.text(x0n, x0p, "TEX:( 0,-1)");
+        &nbsp;&nbsp;&nbsp;this.point(x0p);
+        &nbsp;&nbsp;&nbsp;this.text(x0p, x0n, "TEX:( 0, 1)");
+        &nbsp;&nbsp;&nbsp;this.point(xpn);
+        &nbsp;&nbsp;&nbsp;this.text(xpn, xnp, "TEX:( 1,-1)");
+        &nbsp;&nbsp;&nbsp;this.point(xp0);
+        &nbsp;&nbsp;&nbsp;this.text(xp0, xn0, "TEX:( 1, 0)");
+        &nbsp;&nbsp;&nbsp;this.point(xpp);
+        &nbsp;&nbsp;&nbsp;this.text(xpp, xnn, "TEX:( 1, 1)");
             });
             ` />
     </SubSubSection>
@@ -446,25 +448,25 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
         line = new PrairieDraw("line", function () {
-        this.setUnits(6, 6);
-        var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
 
-        const points = {
-            0: [-1.5, -2],
-            1: [1.5, -2],
-            ...
-            12: [-1.5, -2],
-        };
+        &nbsp;&nbsp;&nbsp;const points = {
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0: [-1.5, -2],
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: [1.5, -2],
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12: [-1.5, -2],
+        &nbsp;&nbsp;&nbsp;};
 
-        const keys = Object.keys(points);
-        for (let i = 0; i < keys.length-1; i++) {
-            if(i%2){
-                this.setProp("shapeStrokePattern", "dashed");
-                this.line(O.add($V(points[i])),  O.add($V(points[i+1])))
-            }else{
-                this.setProp("shapeStrokePattern", "solid");
-                this.line(O.add($V(points[i])),  O.add($V(points[i+1])))
-            }}
+        &nbsp;&nbsp;&nbsp;const keys = Object.keys(points);
+        &nbsp;&nbsp;&nbsp;for (let i = 0; i < keys.length - 1; i++) {
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(i % 2){
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setProp("shapeStrokePattern", "dashed");
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.line(O.add($V(points[i])),  O.add($V(points[i+1])))
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setProp("shapeStrokePattern", "solid");
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.line(O.add($V(points[i])),  O.add($V(points[i+1])))
+            &nbsp;&nbsp;&nbsp;}}
         });
           ` />
     </SubSubSection>
@@ -492,14 +494,14 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
           circle = new PrairieDraw("circle", function () {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
 
-            this.point(O.add($V([-1.25, 0])));
-            this.circle(O.add($V([-1.25, 0])), 1, false);
+        &nbsp;&nbsp;&nbsp;this.point(O.add($V([-1.25, 0])));
+        &nbsp;&nbsp;&nbsp;this.circle(O.add($V([-1.25, 0])), 1, false);
             
-            this.point(O.add($V([-1.25, 0])));
-            this.circle(O.add($V([1.25, 0])), 1, true);
+        &nbsp;&nbsp;&nbsp;this.point(O.add($V([-1.25, 0])));
+        &nbsp;&nbsp;&nbsp;this.circle(O.add($V([1.25, 0])), 1, true);
         });
           ` />
     </SubSubSection>
@@ -523,11 +525,11 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
           rectangle = new PrairieDraw("rectangle", function () {
-            this.setUnits(12, 6);
-            var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(12, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
 
-            this.rectangle(3, 4, O.add($V([-2.5, 0])), Math.PI/4, false);
-            this.rectangle(4, 2, O.add($V([2.5, 0])), 0, true);
+        &nbsp;&nbsp;&nbsp;this.rectangle(3, 4, O.add($V([-2.5, 0])), Math.PI/4, false);
+        &nbsp;&nbsp;&nbsp;this.rectangle(4, 2, O.add($V([2.5, 0])), 0, true);
         });
           ` />
     </SubSubSection>
@@ -559,13 +561,13 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
         properties = new PrairieDraw("props", function() {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
         
-            this.setProp("arrowLineWidthPx", 5);
-            this.arrow(O, $V([2,2]));
-            this.setProp("arrowLineWidthPx", 10);
-            this.arrow(O, $V([2,-2]));
+        &nbsp;&nbsp;&nbsp;this.setProp("arrowLineWidthPx", 5);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, $V([2,2]));
+        &nbsp;&nbsp;&nbsp;this.setProp("arrowLineWidthPx", 10);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, $V([2,-2]));
         });
         ` />
     </SubSubSection>
@@ -600,17 +602,17 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
       <CodeBox language="javascript" code=`
         transformation = new PrairieDraw("trans", function() {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
-            var P = $V([2, 2]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;var P = $V([2, 2]);
 
-            this.arrow(O, P);
-            this.translate($V([1, 1]));
-            this.rotate(Math.PI/2);
-            this.arrow(O, P);
-            this.translate($V([1, 1]));
-            this.rotate(Math.PI/2);
-            this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;this.translate($V([1, 1]));
+        &nbsp;&nbsp;&nbsp;this.rotate(Math.PI/2);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;this.translate($V([1, 1]));
+        &nbsp;&nbsp;&nbsp;this.rotate(Math.PI/2);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
         });
         ` />
 
@@ -648,10 +650,10 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
           images = new PrairieDraw("image", function () {
-            this.setUnits(12, 6);
-            var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;this.setUnits(12, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
 
-            this.drawImage('/about/documentation/alma.jpg', O, $V([0, 0]), 12)
+        &nbsp;&nbsp;&nbsp;this.drawImage('/about/documentation/alma.jpg', O, $V([0, 0]), 12)
           });
           ` />
     </SubSubSection>
@@ -691,16 +693,16 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
       <CodeBox language="javascript" code=`
         optionPD = new PrairieDraw("options", function() {
-            this.addOption("drawLabels", true);
-            this.addOption("Px", 2);
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
-            var P = $V([this.getOption("Px"), 2]);
-            this.arrow(O, P);
-            if (this.getOption("drawLabels")) {
-                this.text(O, $V([0, 1]), "TEX:$O$");
-                this.text(P, $V([0, -1]), "TEX:$P$");
-            }
+        &nbsp;&nbsp;&nbsp;this.addOption("drawLabels", true);
+        &nbsp;&nbsp;&nbsp;this.addOption("Px", 2);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;var P = $V([this.getOption("Px"), 2]);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;if (this.getOption("drawLabels")) {
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.text(O, $V([0, 1]), "TEX:$O$");
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.text(P, $V([0, -1]), "TEX:$P$");
+        &nbsp;&nbsp;&nbsp;}
         });
         ` />
 
@@ -722,7 +724,7 @@ import InlineEquation from "../../components/InlineEquation.astro"
             <CodeBox
                 language="javascript"
                 code={`myAnim = new PrairieDrawAnim("my-canvas", function(t) {
-                    this.addOption("radius", 1); // default value
+                &nbsp;&nbsp;&nbsp;this.addOption("radius", 1); // default value
                 });`}
             />
             </li>
@@ -773,15 +775,15 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
         <CodeBox language="javascript" code=`
         myDraw = new PrairieDraw("circleCanvas", function () {
-            this.addOption("radius", 2);
-            this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;this.addOption("radius", 2);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
 
-            const r = Number(this.getOption("radius"));
-            const O = $V([0, 0]);
-            const P = $V([r, 0]);
+        &nbsp;&nbsp;&nbsp;const r = Number(this.getOption("radius"));
+        &nbsp;&nbsp;&nbsp;const O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;const P = $V([r, 0]);
 
-            this.circle(O, r);
-            this.arrow(O, P, "position");
+        &nbsp;&nbsp;&nbsp;this.circle(O, r);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P, "position");
         });
 
 
@@ -821,17 +823,17 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
       <CodeBox language="javascript" code=`
         save = new PrairieDraw("save", function() {
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
-            var P = $V([2, 2]);
-            this.save();
-            this.setProp("arrowLineWidthPx", 5);
-            this.translate($V([1, 1]));
-            this.rotate(Math.PI/2);
-            this.arrow(O, P);
-            this.restore();
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;var P = $V([2, 2]);
+        &nbsp;&nbsp;&nbsp;this.save();
+        &nbsp;&nbsp;&nbsp;this.setProp("arrowLineWidthPx", 5);
+        &nbsp;&nbsp;&nbsp;this.translate($V([1, 1]));
+        &nbsp;&nbsp;&nbsp;this.rotate(Math.PI/2);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;this.restore();
 
-            this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
         });
         ` />
     </SubSubSection>
@@ -869,16 +871,16 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
       <CodeBox language="javascript" code=`
         animPD = new PrairieDrawAnim("anim", function(t) {
-            this.addOption("drawLabels", true);
-            this.setUnits(6, 6);
-            var O = $V([0, 0]);
-            var P = $V([2 * Math.cos(t), 2 * Math.sin(t)]);
-            this.arrow(O, P);
-            if (this.getOption("drawLabels")) {
-                this.labelLine(O, P, $V([-1,0]), "TEX:$O$");
-                this.labelLine(O, P, $V([1,0]), "TEX:$P$");
-                this.labelLine(O, P, $V([0,1]), "TEX:$\\vec{v}$");
-            }
+        &nbsp;&nbsp;&nbsp;this.addOption("drawLabels", true);
+        &nbsp;&nbsp;&nbsp;this.setUnits(6, 6);
+        &nbsp;&nbsp;&nbsp;var O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;var P = $V([2 * Math.cos(t), 2 * Math.sin(t)]);
+        &nbsp;&nbsp;&nbsp;this.arrow(O, P);
+        &nbsp;&nbsp;&nbsp;if (this.getOption("drawLabels")) {
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.labelLine(O, P, $V([-1,0]), "TEX:$O$");
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.labelLine(O, P, $V([1,0]), "TEX:$P$");
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.labelLine(O, P, $V([0,1]), "TEX:$\\vec{v}$");
+            &nbsp;&nbsp;&nbsp;}
         });
         ` />
 
@@ -977,18 +979,18 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
       <CodeBox language="javascript" code=`
         seqPD = new PrairieDrawAnim("seq", function(t) {
-            this.setUnits(9, 7);
+        &nbsp;&nbsp;&nbsp;this.setUnits(9, 7);
 
-            var sStart =  {th1:  0.5, th2:   -2, th3:   -Math.PI, d: 1};
-            var sGround = {th1:  0.7, th2:    2, th3:    Math.PI, d: 0};
-            var sShelf =  {th1: -0.2, th2: -1.1, th3: -Math.PI/2, d: 0};
-            var sRest =   {th1:    1, th2:   -1, th3: -Math.PI/2, d: -1};
-            var states = [sStart, sGround, sShelf, sRest, sShelf, sGround];
-            var transTimes = [5, 5, 2, 2, 5, 5];
-            var holdTimes = [2, 2, 2, 2, 2, 2];
-            var state = this.sequence(states, transTimes, holdTimes, t);
+        &nbsp;&nbsp;&nbsp;var sStart =  {th1:  0.5, th2:   -2, th3:   -Math.PI, d: 1};
+        &nbsp;&nbsp;&nbsp;var sGround = {th1:  0.7, th2:    2, th3:    Math.PI, d: 0};
+        &nbsp;&nbsp;&nbsp;var sShelf =  {th1: -0.2, th2: -1.1, th3: -Math.PI/2, d: 0};
+        &nbsp;&nbsp;&nbsp;var sRest =   {th1:    1, th2:   -1, th3: -Math.PI/2, d: -1};
+        &nbsp;&nbsp;&nbsp;var states = [sStart, sGround, sShelf, sRest, sShelf, sGround];
+        &nbsp;&nbsp;&nbsp;var transTimes = [5, 5, 2, 2, 5, 5];
+        &nbsp;&nbsp;&nbsp;var holdTimes = [2, 2, 2, 2, 2, 2];
+        &nbsp;&nbsp;&nbsp;var state = this.sequence(states, transTimes, holdTimes, t);
 
-            // draw with variables state.th1, state.th2, state.th3, etc.
+        &nbsp;&nbsp;&nbsp;// draw with variables state.th1, state.th2, state.th3, etc.
         });
         ` />
 
@@ -1042,18 +1044,19 @@ import InlineEquation from "../../components/InlineEquation.astro"
 
       <CodeBox language="javascript" code=`
         diffPD = new PrairieDrawAnim("diff", function(t) {
-            var computePos = function(t) {
-                var dataNow = {};
-                dataNow.O = $V([0, 0]);
-                dataNow.P = this.vector2DAtAngle(-Math.PI/2 + Math.sin(t)).x(2);
-                return dataNow;
-            }
-            var data = this.numDiff(computePos.bind(this), t);
+        &nbsp;&nbsp;&nbsp;var computePos = function(t) {
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var dataNow = {};
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataNow.O = $V([0, 0]);
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataNow.P = this.vector2DAtAngle(-Math.PI/2 + Math.sin(t)).x(2);
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return dataNow;
+        &nbsp;&nbsp;&nbsp;}
+        
+        &nbsp;&nbsp;&nbsp;var data = this.numDiff(computePos.bind(this), t);
 
-            // draw the rod and pivot
-            this.arrow(data.O, data.P, "position");
-            this.arrow(data.P, data.P.add(data.diff.P), "velocity");
-            this.arrow(data.P, data.P.add(data.ddiff.P), "acceleration");
+        &nbsp;&nbsp;&nbsp;// draw the rod and pivot
+        &nbsp;&nbsp;&nbsp;this.arrow(data.O, data.P, "position");
+        &nbsp;&nbsp;&nbsp;this.arrow(data.P, data.P.add(data.diff.P), "velocity");
+        &nbsp;&nbsp;&nbsp;this.arrow(data.P, data.P.add(data.ddiff.P), "acceleration");
         });
         ` />
 </SubSection>
