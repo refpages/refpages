@@ -1,0 +1,377 @@
+---
+import Layout from "../../layouts/BlankLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Section from "../../components/Section.astro";
+import SubSection from "../../components/SubSection.astro";
+import SubSubSection from "../../components/SubSubSection.astro";
+import SubSubSubSection from "../../components/SubSubSubSection.astro";
+import CodeBox from "../../components/CodeBox.astro";
+import PrairieDrawCanvas from "../../components/PrairieDrawCanvas.astro";
+import InlineCanvas from "../../components/InlineCanvas.astro";
+import Image from "../../components/Image.astro";
+import Itemize from "../../components/Itemize.astro";
+import Enumerate from "../../components/Enumerate.astro";
+import Item from "../../components/Item.astro";
+import Example from "../../components/Example.astro"
+import Row from "../../components/Row.astro"
+import Col from "../../components/Col.astro"
+import Warning from "../../components/Warning.astro"
+import Plotly from "../../components/Plotly.astro";
+import Slideshow from "../../components/Slideshow.astro";
+import InlineEquation from "../../components/InlineEquation.astro"
+
+---
+
+<style>
+    red-text{
+        background-color: red;
+        color: black;
+    }
+
+</style>
+
+<Layout title="Analytics documentation">
+
+<div slot="navtree">
+    <ul class='list-group list-group-flush py-0'>
+        <li class='list-group-item py-0'><a class='text-decoration-none subsection' href='#home'>Home Page</a></li>
+        <li class='list-group-item py-0'><a class='text-decoration-none subsection' href='#reports'> Reports Page </a></li>
+        <li class='list-group-item py-0'><a class='text-decoration-none subsection' href='#explore'> Explore Page </a>
+            <ul class='list-group list-group-flush py-0'>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#free'>Free form</a></li>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#funnel'>Funnel exploration</a></li>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#path'>Path exploration</a></li>
+            </ul>
+        </li>
+        <li class='list-group-item py-0'><a class='text-decoration-none subsection' href='#metrics'> Metrics </a> 
+            <ul class='list-group list-group-flush py-0'>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#engagement'>Engagement</a></li>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#traffic'>Funnel Traffic Sources</a></li>
+            </ul>
+        </li>
+        <li class='list-group-item py-0'><a class='text-decoration-none subsection' href='#interactions'> Interactions </a>
+            <ul class='list-group list-group-flush py-0'>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#comparisons'>Comparisons</a></li>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#graphs'>Interpreting Graphs</a></li>
+                <li class='list-group-item py-0'><a class='text-decoration-none subsubsection' href='#exporting'>Exporting Data</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+    
+
+<Section title="Analytics Documentation" id="style-guide">
+
+<p>
+    Analytics provide insight into how content is used and engaged with over time. By visualizing metrics such as page traffic, time spent, and interaction patterns, 
+    analytics help identify which concepts resonate with students, where confusion may arise, and how learning resources are being used over time. This page outlines the available analytics tools
+    and how to interpret key patterns in the data. These insights allow for data-informed descisions and continuous improvement of content.
+<p>
+    For additional information, please refer to the official <a href="https://support.google.com/analytics/#topic=14090456/">Google Analytics Help</a> guide to learn more.
+    If a problem is still unsolvable after consulting the troubleshooting page, please submit an official issue on the github. 
+
+</p>
+    
+</Section>
+
+<SubSection title="Home Page" id="home">
+    <img src="/about/analytics/home.png" style="width: 100%; height: auto;" />
+    The analytics dashboard provides instructors with quick insights into how students interact with website overall. 
+    <ol>
+        <li>The menu in the top-left corner allows you to switch between all the accounts and properties for which you have permission to access. </li>
+        <li>The search bar allows you to quickly find answers to your question, as well as locate reports, properties, and insights.</li>
+        <li>The navigation panel provides links to </li>
+            <ul>
+                <li>Home: Provides a quick overview of key insights, trends, and real-time activity.</li>
+                <li>Reports: Standard reports on traffic, engagement, and user behavior.</li>
+                <li>Explore: Tools for building custom analyses and charts.</li>
+                <li>Advertising: Insights on campaign results and attribution.</li>
+            </ul>
+        <li>The overview graph displays 7-day user, event, and view trends with comparison metrics, while the real-time graph shows active users from the last 30 minutes and their locations.</li>
+        <li>These miscellaneous quick links let you navigate to the Analytics Advisor, an AI-powered helper.</li>
+    </ol>
+</SubSection>
+
+<SubSection title="Reports Page" id="reports">
+    <img src="/about/analytics/snapshot.png" style="width: 50%; height: auto; display: block; margin: 0 auto;" />
+    <p>
+    The left-side navigation menu organizes all Google Analytics reports by objective, helping you understand how users discover, navigate, and engage with your site.
+    </p>
+    <p><strong>Realtime Information</strong> — These reports show what is happening on your site currently. 
+        <ul>
+            <li><strong>Realtime Overview and Snapshot:</strong> Displays active users on the site from around the world, event counts, and total views within the last few minutes.</li>
+            <li><strong>Realtime Pages:</strong> Shows which pages users are currently viewing, helping you monitor traffic spikes, live events, or sudden engagement changes.</li>
+        </ul>
+    </p>
+
+    <p><strong>Generate Leads</strong> — Reports that explain who your users are, how they arrive at your site, 
+    and what actions contribute to lead generation.
+        <ul>
+            <li><strong>Overview:</strong> High-level traffic and engagement summary.</li>
+            <li><strong>Audiences:</strong> Breaks users into segments based on shared attributes.</li>
+            <li><strong>User Acquisition:</strong> Shows how new users first found the site (search, social, direct).</li>
+            <li><strong>Traffic Acquisition:</strong> Detailed breakdown of traffic channels and mediums.</li>
+            <li><strong>Lead Acquisition:</strong> Tracks the pathways that produce leads or sign-ups.</li>
+            <li><strong>Landing Page:</strong> Performance of users’ entry pages.</li>
+            <li><strong>User Acquisition Cohorts:</strong> Groups new users by the first channel that brought them to your site and tracks how those users behave over time.</li>
+            <li><strong>Lead disqualification and loss:</strong> Shows where leads drop off or progress through the funnel.</li>
+        </ul>
+    </p>
+    <p><strong>Drive Sales</strong> — Focused on ecommerce and revenue-related behavior.  
+    This includes insights into conversions, purchase trends, and overall monetization performance.</p>
+    <p><strong>Understand Web and/or App Performance</strong> — Shows technical metrics such as page load times, responsiveness,  
+    and other performance signals that affect user experience.</p>
+    <p><strong>User Engagement & Retention</strong> — Highlights how long users stay on the site, which pages they return to,  
+    and overall engagement patterns that indicate site effectiveness. </p>
+    <p><strong>User Attributes</strong> — Provides demographic information, device types, browser technology,  
+    and other background details to help you understand who is visiting and how they access your site.</p>
+</SubSection>
+
+<SubSection title="Explore Page" id="explore">
+        <p>The Explore page gives you full control to create custom analyses that goes beyond the sites standard reports.
+        Unlike the report dashport, Explore lets you build your own visualizations, filter data, compare across different metrics, and dig deeper into user behavior.</p>
+        
+        <p><strong>Free-form Exploration:</strong> A flexible table + chart builder that lets you drag and drop dimensions, compare user segments, add filters, and visualize trends in any format (bars, lines, tables, heatmaps). Best for investigating patterns, segment differences, and multi-metric comparisons.</p>
+        <p><strong>Cohort Exploration:</strong> Groups users based on shared characteristics (like first-visit date) and tracks how their behavior changes over time. Useful for analyzing retention, comparing exam-week vs. non-exam-week users, or identifying when engagement drops.</p>
+        <p><strong>Funnel Exploration:</strong> Builds multi-step funnels to reveal where users drop off. Supports both open funnels (users can enter at later steps) and closed funnels (must follow exact step order). Best for tracing flows from homepage → course pages → practice problems → animations.</p>
+        <p><strong>Segment Overlap:</strong> A Venn diagram-style visualization that compares multiple user groups. Helps you see relationships between segments, like exam-week visitors who also explore animations and complete practice quizzes.</p>
+        <p><strong>Path Exploration:</strong> Visualizes how users navigate from one event or page to the next. You can choose a starting point (forward path) or an ending point (reverse path). Great for seeing where students go after landing on a homework page or which paths lead to high bounce rates.</p>
+        <p><strong>User Explorer:</strong> Provides anonymized individual user journeys, showing event sequences, pages viewed, engagement time, and session counts. Useful for debugging unusual behavior (such as repeated page reloads).</p>
+        <p><strong>User Lifetime:</strong> Tracks long-term engagement and value contributions of user cohorts. While often used for businesses, it can show whether early-semester users continue returning throughout the term.</p>
+
+        <SubSubSection title="Free form" id="free">
+            <img src="/about/analytics/explore.png" style="width: 90%; height: auto; display: block; margin: 0 auto;" />
+            <p>The Free Form technique is different from other Google Analytics explorations because it has no predefined question it is trying to answer. Instead of guiding you through a specific analysis (like funnels or paths), it gives you a blank canvas where you decide what dimensions, metrics, and comparisons to use, allowing you to explore data freely and uncover patterns that aren’t visible in standard reports.</p>
+
+            <p>
+            When starting any exploration in Google Analytics, begin by choosing the 
+            <strong>technique</strong> you want to use. Each technique offers a different 
+            style of analysis, so selecting it first sets the structure for everything 
+            that follows. Once the technique is chosen, pick a 
+            <strong>visualization style</strong> that best represents the kind of insight 
+            you're looking. After the layout is set, use the <strong>Variables panel</strong> to choose the 
+            data you want to include. This is where you add dimensions like device category 
+            or city, and metrics such as active users or event count. From there, drag these 
+            variables into the Settings panel to shape the rows, columns, values, and filters.
+            Following this workflow ensures you build a clear, accurate, and meaningful 
+            exploration regardless of the technique you choose.
+            </p>
+
+            <p><strong>Variables panel</strong></p>
+
+                <ul>
+                    <li><strong>Exploration name:</strong> The title of your exploration, used to identify and organize different analyses.</li>
+                    <li><strong>Segments:</strong> User groups available for comparison. <i>Includes: US, Direct traffic, Paid traffic, Mobile traffic, Tablet traffic.</i></li>
+                    <li><strong>Dimensions:</strong> Categories used to break down data. <i>Includes: Country, Device category, First user medium, City.</i></li>
+                    <li><strong>Metrics:</strong> Numerical values measured in your report. <i>Includes: Active users, Event count, Transactions.</i></li>
+                </ul>
+
+            <p><strong>Settings panel</strong></p>
+
+            <ul>
+                <li><strong>Technique:</strong> Determines the type of exploration. Example shown: Free form, path exploration, funnel exploration, and more.</li>
+                <li><strong>Visualization:</strong> Controls how your data appears. Options shown include table, donut chart, line chart, scatterplot, bar chart, and geo map.</li>
+                <li><strong>Segment comparisons:</strong> A place to drag segments to compare different user groups in the same visualization.</li>
+                <li><strong>Rows:</strong> Defines how data is organized vertically.</li>
+                <li><strong>Start row:</strong> Sets which row the table begins displaying.</li>
+                <li><strong>Show rows:</strong> Determines how many rows are visible.</li>
+                <li><strong>Nested rows:</strong> Enables or disables hierarchical row structure.</li>
+                <li><strong>Columns:</strong> Defines how data is organized horizontally.</li>
+                <li><strong>Start column group:</strong> Sets which column group appears first.</li>
+                <li><strong>Show column groups:</strong> Number of column groups displayed.</li>
+                <li><strong>Values:</strong> Metrics added here populate the table or chart.</li>
+                <li><strong>Cell type:</strong> Controls how each cell visualizes data. </li>
+                <li><strong>Filters:</strong> Drop a dimension or metric here to restrict what data appears in the visualization.</li>
+            </ul>
+        <SubSubSection title="Funnel exploration" id="funnel">
+            <img src="/about/analytics/funnel.png" style="width: 90%; height: auto; display: block; margin: 0 auto;" />
+            <p> In the funnel exploration, each vertical bar represents a defined step in a user journey through the page, with height indicating how many users reached that stage. The percentages shown above each step reflect step-to-step completion, while the abandonment rates displayed below highlight where users exit the flow. The table beneath the chart mirrors this progression numerically, allowing you to compare total users and completion rates across different device categories in the same view. </p>
+            <p><strong>Settings panel</strong></p>
+            <ul>
+                <li><strong>Make Open Funnel:</strong> Determines whether users must start at the first step or can enter the funnel at any step.</li>
+                <li><strong>Steps:</strong> Defines each stage of the funnel. Each step corresponds to an event or page view in the user journey.</li>
+                <li><strong>Breakdown:</strong> Splits funnel results by a selected dimension, such as device category.</li>
+                <li><strong>Rows per Dimension:</strong> Controls how many rows are displayed for each breakdown in the results table.</li>
+                <li><strong>Show Elapsed Time:</strong> Displays how long users take to move between steps in the funnel.</li>
+                <li><strong>Next Action:</strong> Specifies the dimension used to determine what users do after completing a step.</li>
+                <li><strong>Filters:</strong> Limits the funnel to specific users, events, or conditions.</li>
+            </ul>
+        <SubSubSection title="Path exploration" id="path">
+            <img src="/about/analytics/path.png" style="width: 90%; height: auto; display: block; margin: 0 auto;" />
+            <p> The path exploration visualizes user movement as a flow diagram, where each column represents a sequence of actions and the width of each connection reflects event frequency. Nodes expand dynamically to reveal additional paths, making it easy to identify  navigation routes as well as less common interactions. This view emphasizes how users branch, loop, or drop off as they move between events and pages. </p>
+            <p><strong>Settings panel</strong></p>
+            <ul>
+                <li><strong>Node Type:</strong> Determines what each node represents, such as event name, page title, or page path.</li>
+                <li><strong>View Unique Nodes Only:</strong> Toggles whether repeated nodes are combined or shown separately.</li>
+                <li><strong>Breakdown:</strong> Adds an additional dimension to split paths and compare navigation behavior.</li>
+                <li><strong>Values:</strong> Controls which metric is used to size nodes, such as event count.</li>
+                <li><strong>Node Filters:</strong> Allows specific nodes or paths to be included or excluded from the visualization.</li>
+            </ul>
+
+</SubSection>
+
+
+<SubSection title="Metrics" id="metrics">
+    <SubSubSection title="Engagement" id="engagement">
+    <img src="/about/analytics/screens.png" style="width: 100%; height: auto; display: block; margin: 0 auto;" />
+    <p>
+        Filter analytics data by course to isolate how students interact with specific
+        content rather than viewing site-wide averages.
+    </p>
+
+    <p>
+        For detailed engagement analysis, navigate to 
+        <strong>Reports → View user engagement & retention → Pages and screens</strong>. 
+        From there, identify sessions that align with exams, quizzes, or homework deadlines
+        and examine page-level metrics such as views, average engagement time, and event counts.
+    </p>
+
+    <p>
+        Use the <strong>Event count</strong> column in the Pages and screens table to
+        analyze specific user interactions. Clicking an event name allows you to
+        break down which actions occurred on a page, such as link clicks, button
+        presses, or interactive components. This helps distinguish passive page views
+        from active engagement and provides insight into how students are actually
+        using the content.
+    </p>
+
+    </SubSubSection>
+
+    <SubSubSection title="Traffic Sources" id="traffic">
+        <img src="/about/analytics/traffic.png" style="width: 100%; height: auto; display: block; margin: 0 auto;" />
+        <p>
+            Traffic sources show how users arrive at your site, such as through search
+            engines, direct links, or referrals from other platforms.
+        </p>
+
+        <p>
+            To view this data, navigate to 
+            <strong>Reports → Generate leads → Traffic acquisition</strong> or <strong>User acquisition</strong>.
+            Use the default channel grouping to identify which sources (Organic Search,
+            Direct, Referral, Social) drive the most users and engagement.
+        </p>
+
+        <p>
+            For page-specific analysis, add a comparison or filter to isolate traffic
+            sources for a particular course page or exam-related content.
+        </p>
+    </SubSubSection>
+
+</SubSection>
+
+<SubSection title="Interactions" id="interactions">
+    <SubSubSection title="Comparisons" id="comparisons">
+        <img src="/about/analytics/compare.png" style="width: 100%; height: auto; display: block; margin: 0 auto;" />
+        <p>
+        Clicking the <strong> Add comparison </strong> icon opens a side panel where you can select which
+        metrics or segments to compare within the current report. This allows you to
+        analyze differences between user groups, time periods, or traffic sources
+        without leaving the page.
+        </p>
+
+        <p>
+        Comparisons are especially useful for evaluating changes in engagement before
+        and after exams, contrasting desktop versus mobile usage, or identifying how
+        different acquisition channels affect user behavior.
+        </p>
+    </SubSubSection>
+
+
+
+    <SubSubSection title="Interpreting Graphs" id="graphs">
+        <p>
+            Hovering over any graph reveals detailed values at that point in time, such as
+            exact user counts, engagement duration, or event totals. 
+        </p>
+        <img src="/about/analytics/Graphs.png" style="width: 100%; height: auto; display: block; margin: 0 auto;" />
+        <p>
+            <strong>Insights:</strong>
+            The Insights panel highlights automated observations generated by Google Analytics.
+            These may include detected trends, anomalies, or recommendations based on
+            recent user behavior.
+        </p>
+
+        <p>
+            <strong>New Users by Channel:</strong>
+            This bar chart shows how new users first arrived at the site, grouped by
+            acquisition channels such as Organic Search, Direct, and Referral.
+            It helps identify which channels are most effective at bringing in first-time visitors.
+        </p>
+
+        <p>
+            <strong>Sessions by Channel:</strong>
+            This table displays the total number of sessions grouped by traffic source.
+            Unlike new users, this includes repeat visits and is useful for understanding
+            sustained engagement from different acquisition channels.
+        </p>
+
+        <p>
+            <strong>Active Users by Country:</strong>
+            The world map visualizes where users are geographically located.
+            This can be used to identify international usage patterns or confirm
+            whether traffic aligns with the expected student population.
+        </p>
+
+        <p>
+            <strong>User Activity Over Time:</strong>
+            This time-series graph compares user activity across different time windows
+            (30 days, 7 days, and 1 day). It helps distinguish long-term trends from
+            short-term engagement spikes.
+        </p>
+
+        <p>
+            <strong>User Activity by Cohort:</strong>
+            The cohort table groups users by their first visit date and shows how
+            engagement changes over subsequent weeks. This visualization is useful
+            for analyzing retention and whether users continue returning after
+            initial exposure to the content.
+        </p>
+
+        <p>
+            <strong>Views by Page Title:</strong>
+            This table lists the most-viewed pages on the site.
+            It allows instructors to identify which topics or reference pages receive
+            the most attention and which may need improvement.
+        </p>
+
+        <p>
+            <strong>Event Count by Event Name:</strong>
+            This table breaks down how often tracked events occur, such as page views,
+            scrolls, clicks, and session starts. Event counts provide insight into
+            how users interact with the site beyond simply loading pages.
+        </p>
+
+        <p>
+            <strong>Key Events and Monetization Panels:</strong>
+            These panels summarize key events, user value, and purchases if configured.
+            For educational sites, these are often unused but remain available for
+            advanced tracking or future feature expansion.
+        </p>
+
+    </SubSubSection>
+
+    <SubSubSection title="Exporting Data" id="exporting">
+        <img src="/about/analytics/exporting.png" style="width: 50%; height: auto; display: block; margin: 0 auto;" />
+        <img src="/about/analytics/export.png" style="width: 50%; height: auto; display: block; margin: 0 auto;" />
+        <p>To export your data press the share/export button (1) and (2). This menu lets you download CSV files, export charts as PDFs, send data to Google Sheets, or create a shareable link.</p>
+        <p>You can also save chart screenshots for use in reports or presentations.</p>
+        <p>
+            <strong>To automate exporting data</strong>, administrators can use the 
+            <em>Schedule email</em> option found under the <em>Share this report</em> menu.
+            This allows reports to be automatically emailed on a set schedule (daily,
+            weekly, monthly, or quarterly) as a PDF or CSV, including any filters,
+            comparisons, and date ranges applied at the time of scheduling.
+        </p>
+
+        <img src="/about/analytics/exportexplore.png" style="width: 50%; height: auto; display: block; margin: 0 auto;" />
+        <p>
+            To customize a pre-made report, use the export option on the Reports page to
+            send it to the Explore workspace, where you can modify dimensions, metrics,
+            and visualizations.
+        </p>
+
+        
+    </SubSubSection>
+</SubSection>
+
+</Layout>
